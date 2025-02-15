@@ -18,7 +18,10 @@
 		"db:start": "docker compose up",
 		"db:push": "drizzle-kit push",
 		"db:migrate": "drizzle-kit migrate",
+		"db:generate": "drizzle-kit generate",
 		"db:studio": "drizzle-kit studio",
+		"docker:up": "docker compose -f compose.develop.yml up -d",
+		"docker:down": "docker compose -f compose.develop.yml down",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
@@ -67,6 +70,7 @@
 	"dependencies": {
 		"@inlang/paraglide-sveltekit": "^0.15.5",
 		"drizzle-orm": "^0.38.4",
-		"postgres": "^3.4.5"
+		"postgres": "^3.4.5",
+		"uuidv7": "^1.0.2"
 	}
 }
