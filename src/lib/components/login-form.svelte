@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import { Input } from "$lib/components/ui/input/index.js";
-	import { Label } from "$lib/components/ui/label/index.js";
+	import { Button } from '@/lib/components/ui/button/index.js';
+	import * as Card from '@/lib/components/ui/card/index.js';
+	import { Input } from '@/lib/components/ui/input/index.js';
+	import { Label } from '@/lib/components/ui/label/index.js';
 </script>
 
 <Card.Root class="mx-auto max-w-sm">
@@ -19,9 +19,7 @@
 			<div class="grid gap-2">
 				<div class="flex items-center">
 					<Label for="password">Password</Label>
-					<a href="##" class="ml-auto inline-block text-sm underline">
-						Forgot your password?
-					</a>
+					<a href="##" class="ml-auto inline-block text-sm underline"> Forgot your password? </a>
 				</div>
 				<Input id="password" type="password" required />
 			</div>

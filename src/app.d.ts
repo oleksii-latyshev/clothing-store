@@ -3,7 +3,9 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			trpc: TrpcServer;
+		}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}

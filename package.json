@@ -69,8 +69,11 @@
 	},
 	"dependencies": {
 		"@inlang/paraglide-sveltekit": "^0.15.5",
+		"@tanstack/svelte-query": "^5.66.0",
 		"drizzle-orm": "^0.38.4",
 		"postgres": "^3.4.5",
-		"uuidv7": "^1.0.2"
+		"trpc-svelte-query": "^2.1.0",
+		"uuidv7": "^1.0.2",
+		"zod": "^3.24.2"
 	}
 }
