@@ -13,6 +13,7 @@
 </script>
 
 <h1>{m.hello_world({ name: 'SvelteKit User' })}</h1>
+<p>{m.test()}</p>
 <div>
 	<button onclick={() => switchToLanguage('en')}>en</button>
 </div>
