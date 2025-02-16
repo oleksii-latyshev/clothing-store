@@ -1,7 +1,7 @@
 import { relations } from 'drizzle-orm';
 import { pgTable, index, numeric } from 'drizzle-orm/pg-core';
-import { categories } from './categories.schema';
 import { commonForeignKey, commonText, id, lifecycleDates, maxVarchar } from '../utils/schemas';
+import { categories } from '@/modules/category/db/schema';
 
 export const products = pgTable(
 	'products',

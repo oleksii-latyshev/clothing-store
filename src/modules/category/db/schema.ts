@@ -9,6 +9,7 @@ export const categories = pgTable(
 		id,
 		name: maxVarchar('name').notNull(),
 		description: commonText('description'),
+		slug: maxVarchar('slug').notNull(),
 		...lifecycleDates
 	},
 	(table) => [index('categories_name_idx').on(table.name)]

@@ -1,4 +1,5 @@
 <script>
+	import CategoriesPreview from '@/modules/category/components/categories-preview/categories-preview.svelte';
 	import { trpc } from '@/server/trpc/client.js';
 
 	export let data;
@@ -17,3 +18,5 @@
 {:else if $query.data}
 	<p>{$query.data}</p>
 {/if}
+
+<CategoriesPreview />

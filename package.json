@@ -22,7 +22,7 @@
 		"db:studio": "drizzle-kit studio",
 		"docker:up": "docker compose -f compose.develop.yml up -d",
 		"docker:down": "docker compose -f compose.develop.yml down",
-		"storybook": "storybook dev -p 6006",
+		"story": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
 	"devDependencies": {
