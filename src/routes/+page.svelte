@@ -1,22 +1,10 @@
 <script>
+	import FullscreenSlider from '@/lib/components/fullscreen-slider/fullscreen-slider.svelte';
 	import CategoriesPreview from '@/modules/category/components/categories-preview/categories-preview.svelte';
-	import { trpc } from '@/server/trpc/client.js';
-
-	export let data;
-
-	const query = trpc.hello.query({
-		name: 'Oleksii'
-	});
+	import { CATEGORIES_TO_PREVIEW, MAIN_PAGE_FULLSCREEN_SLIDES } from './constants';
 </script>
 
-{data.hello}
-
-{#if $query.isLoading}
-	<p>Loading...</p>
-{:else if $query.error}
-	<p>Error: {$query.error.message}</p>
-{:else if $query.data}
-	<p>{$query.data}</p>
-{/if}
-
-<CategoriesPreview />
+<main class="space-y-1">
+	<FullscreenSlider slides={MAIN_PAGE_FULLSCREEN_SLIDES} />
+	<CategoriesPreview categories={CATEGORIES_TO_PREVIEW} />
+</main>

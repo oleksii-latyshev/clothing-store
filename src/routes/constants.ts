@@ -1,5 +1,19 @@
+import type { FullscreenSlide } from '@/lib/components/fullscreen-slider/types';
 import type { CategoryPreview } from '@/modules/category/components/categories-preview/types';
 import { CATEGORIES, CATEGORY_SLUGS } from '@/modules/category/constants';
+
+export const MAIN_PAGE_FULLSCREEN_SLIDES: FullscreenSlide[] = [
+	{
+		name: 'new',
+		image: 'https://i.pinimg.com/736x/80/b9/64/80b9643b86441341618a2261fb0e1fc2.jpg',
+		slug: '/clothes/new'
+	},
+	{
+		name: 'basics',
+		image: 'https://i.pinimg.com/736x/80/b9/64/80b9643b86441341618a2261fb0e1fc2.jpg',
+		slug: '/clothes'
+	}
+];
 
 // TODO: Not the best way to do this, but I will return to this later (I hope =))
 export const CATEGORIES_TO_PREVIEW: CategoryPreview[] = [
