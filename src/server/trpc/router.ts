@@ -1,11 +1,10 @@
-import { helloSchema } from '@/lib/schemas';
-import { publicProcedure, router } from '@/server/trpc/init';
+import { categoriesTrpcRouter } from '@/modules/category/trpc';
+import { productsTrpcRouter } from '@/modules/products/trpc';
+import { router } from '@/server/trpc/init';
 
 export const trpcRouter = router({
-	hello: publicProcedure.input(helloSchema).query(() => {
-		// return db.query.categories.findMany();
-		return 'Hello, world!';
-	})
+	products: productsTrpcRouter,
+	categories: categoriesTrpcRouter
 });
 
 export type TrpcRouter = typeof trpcRouter;

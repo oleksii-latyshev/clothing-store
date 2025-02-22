@@ -1,7 +1,13 @@
-import { relations } from 'drizzle-orm';
+import { getTableColumns, relations } from 'drizzle-orm';
 import { pgTable, index, numeric } from 'drizzle-orm/pg-core';
-import { commonForeignKey, commonText, id, lifecycleDates, maxVarchar } from '../utils/schemas';
 import { categories } from '@/modules/category/db/schema';
+import {
+	commonForeignKey,
+	commonText,
+	id,
+	lifecycleDates,
+	maxVarchar
+} from '@/server/db/utils/schemas';
 
 export const products = pgTable(
 	'products',
@@ -37,3 +43,5 @@ export const productsRelations = relations(products, ({ one }) => ({
 export type Product = typeof products.$inferSelect;
 
 export type NewProduct = typeof products.$inferInsert;
+
+export const productSchemaColumns = getTableColumns(products);

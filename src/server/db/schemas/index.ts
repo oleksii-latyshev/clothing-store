@@ -1,2 +1,2 @@
 export * from '@/modules/category/db/schema';
-export * from './products.schema';
+export * from '@/modules/products/db/schema';

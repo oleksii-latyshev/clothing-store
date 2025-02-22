@@ -1,0 +1,1 @@
+export const PRODUCTS_LIMIT_PER_SEARCH_PAGE = 50;

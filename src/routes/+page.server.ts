@@ -1,7 +1,9 @@
-import { trpcServer } from '@/server/trpc/server.js';
+// import { trpcServer } from '@/server/trpc/server.js';
 
-export const load = async (event) => {
-	return {
-		hello: await trpcServer.hello.ssr({ name: 'Oleksii' }, event)
-	};
+export const load = async () => {
+	// return {
+	// 	hello: await trpcServer.hello.ssr({ name: 'Oleksii' }, event)
+	// };
+
+	return {};
 };
