@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
+import type { DBTransaction } from '@/server/db';
 import { type Category, type NewProduct, type Product, products } from '@/server/db/schemas';
-import type { DBTransaction } from '@/server/db/types';
 
 const PRODUCTS_PER_CATEGORY = 50;
 
