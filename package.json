@@ -43,6 +43,7 @@
 		"@tailwindcss/vite": "^4.0.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/svelte": "^5.2.4",
+		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
 		"bits-ui": "^1.1.0",
 		"clsx": "^2.1.1",
 		"drizzle-kit": "^0.30.2",
