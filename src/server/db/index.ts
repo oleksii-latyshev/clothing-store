@@ -1,16 +1,23 @@
-import { env } from '$env/dynamic/private';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 
-import * as schema from '@/server/db/schemas';
+import * as schema from './schemas';
 
-if (!env.DATABASE_URL) {
+if (!import.meta.env.DATABASE_URL) {
   throw new Error('DATABASE_URL is not set');
 }
 
-const client = postgres(env.DATABASE_URL);
+const globalForDb = globalThis as unknown as {
+  conn: postgres.Sql | undefined;
+};
 
-export const db = drizzle(client, {
+const connection = globalForDb.conn ?? postgres(import.meta.env.DATABASE_URL);
+
+if (import.meta.env.NODE_ENV !== 'production') {
+  globalForDb.conn = connection;
+}
+
+export const db = drizzle(connection, {
   schema,
 });
 
