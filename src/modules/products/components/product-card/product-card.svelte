@@ -21,7 +21,7 @@
 <li>
   <a
     class={cn('flex flex-col w-full group h-full transition-colors hover:bg-muted', className)}
-    href="/products/{id}"
+    href="/{id}"
     {...props}
   >
     <div class="w-full overflow-hidden h-[600px] lg:h-[800px]">

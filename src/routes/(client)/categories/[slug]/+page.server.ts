@@ -25,7 +25,7 @@ export const load = (async (event) => {
   // TODO: maybe in the future I will remove it because I wont to implement pagination by dynamic scroll or how to call it
   const page = Number(url.searchParams.get('page')) || 1;
 
-  const data = await trpc.products.getManyBySlug.ssr(
+  const data = await trpc.products.getManyByCategorySlug.ssr(
     {
       slug: categorySlug,
       page,

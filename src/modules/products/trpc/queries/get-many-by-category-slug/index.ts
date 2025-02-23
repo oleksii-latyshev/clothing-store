@@ -7,7 +7,7 @@ import { type Product, categories, productSchemaColumns, products } from '@/serv
 import { withPagination } from '@/server/db/utils/queries';
 import { publicProcedure } from '@/server/trpc/init';
 
-export const getManyBySlugQuery = publicProcedure
+export const getManyByCategorySlugQuery = publicProcedure
   .input(paginationSchema.merge(getBySlugSchema))
   .query(
     async ({
