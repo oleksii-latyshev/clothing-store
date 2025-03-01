@@ -11,7 +11,7 @@
 >
   {#each categories as { name, slug, image } (slug)}
     <li class="group relative overflow-hidden bg-gray-100">
-      <a href={`/categories/${slug}`} class="block h-full w-full">
+      <a href="/categories/{slug}" class="block h-full w-full">
         <img
           src={image}
           alt={name}
