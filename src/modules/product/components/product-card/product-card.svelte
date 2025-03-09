@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getDiscountPercentage } from '@/lib/helpers/getDiscountPercentage';
   import { cn } from '@/lib/utils';
-  import type { ProductCardProps } from '@/modules/products/components/product-card/types';
+  import type { ProductCardProps } from '@/modules/product/components/product-card/types';
 
   const {
     id,

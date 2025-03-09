@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ProductCard from '@/modules/products/components/product-card/product-card.svelte';
+  import ProductCard from '@/modules/product/components/product-card/product-card.svelte';
 
   import type { PageProps } from './$types';
 

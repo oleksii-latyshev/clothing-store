@@ -1,10 +1,12 @@
 <script lang="ts">
+  import Navbar from '@/lib/components/navbar/navbar.svelte';
+
   import type { LayoutProps } from './$types';
 
   let { children }: LayoutProps = $props();
 </script>
 
 <main>
-  <header>123</header>
+  <Navbar />
   {@render children()}
 </main>

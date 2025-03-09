@@ -1,5 +1,5 @@
 import { seedCategories } from '@/modules/category/db/seed';
-import { seedProducts } from '@/modules/products/db/seed';
+import { seedProducts } from '@/modules/product/db/seed';
 import { db } from '@/server/db';
 
 const dbSeeding = async () => {

@@ -1,8 +1,8 @@
 <script lang="ts">
   import Button from '@/lib/components/ui/button/button.svelte';
   import { cn } from '@/lib/utils';
-  import { DEFAULT_PRODUCT_COLORS } from '@/modules/products/components/product-colors/constants';
-  import type { ProductColorsProps } from '@/modules/products/components/product-colors/types';
+  import { DEFAULT_PRODUCT_COLORS } from '@/modules/product/components/product-colors/constants';
+  import type { ProductColorsProps } from '@/modules/product/components/product-colors/types';
 
   let {
     colors = DEFAULT_PRODUCT_COLORS,
@@ -13,7 +13,7 @@
   let selectedColor = colors[1];
 </script>
 
-<ul class={cn('flex gap-2', className)} {...props}>
+<ul class={cn('flex gap-2 flex-wrap', className)} {...props}>
   {#each colors as color}
     <Button
       size="icon"

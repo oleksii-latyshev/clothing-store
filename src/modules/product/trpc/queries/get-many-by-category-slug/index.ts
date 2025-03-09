@@ -2,7 +2,7 @@ import { asc, count, eq } from 'drizzle-orm';
 
 import { getBySlugSchema, paginationSchema } from '@/lib/schemas';
 import { type PaginationResponse } from '@/lib/types';
-import { PRODUCTS_LIMIT_PER_SEARCH_PAGE } from '@/modules/products/constants';
+import { PRODUCTS_LIMIT_PER_SEARCH_PAGE } from '@/modules/product/constants';
 import { type Product, categories, productSchemaColumns, products } from '@/server/db/schemas';
 import { withPagination } from '@/server/db/utils/queries';
 import { publicProcedure } from '@/server/trpc/init';
