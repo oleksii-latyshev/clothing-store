@@ -1,3 +1,3 @@
-import { i18n } from '@/lib/i18n';
+import { i18nRerouteMiddleware } from '@/lib/middlewares/i18n.middleware';
 
-export const reroute = i18n.reroute();
+export const reroute = i18nRerouteMiddleware;

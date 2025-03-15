@@ -1,14 +1,14 @@
 import type { Handle } from '@sveltejs/kit';
-import { i18n } from '@/lib/i18n';
 import { sequence } from '@sveltejs/kit/hooks';
-import { trpcServer } from '@/server/trpc/server';
 
-const handleParaglide: Handle = i18n.handle();
+import { i18nMiddleware } from '@/lib/middlewares/i18n.middleware';
+import { injectTrpcMiddleware } from '@/lib/middlewares/inject-trpc.middleware';
+import { authMiddleware } from '@/modules/auth/middlewares/auth.middleware';
+import { injectSessionMiddleware } from '@/modules/auth/middlewares/inject-session.middleware';
 
-const injectTrpc: Handle = async ({ event, resolve }) => {
-	event.locals.trpc = trpcServer;
-
-	return resolve(event);
-};
-
-export const handle: Handle = sequence(handleParaglide, injectTrpc);
+export const handle: Handle = sequence(
+  injectTrpcMiddleware,
+  authMiddleware,
+  i18nMiddleware,
+  injectSessionMiddleware,
+);

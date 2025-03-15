@@ -78,6 +78,7 @@
   "dependencies": {
     "@inlang/paraglide-sveltekit": "^0.15.5",
     "@tanstack/svelte-query": "^5.66.0",
+    "better-auth": "^1.2.3",
     "drizzle-orm": "^0.38.4",
     "postgres": "^3.4.5",
     "trpc-svelte-query": "^2.1.0",
