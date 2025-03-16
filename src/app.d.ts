@@ -1,5 +1,4 @@
-import type { Session, User } from 'better-auth';
-
+import type { Session, User } from '@/server/db/schemas';
 import type { TrpcServer } from '@/server/trpc/server';
 
 declare global {

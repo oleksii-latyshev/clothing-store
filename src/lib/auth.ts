@@ -26,5 +26,12 @@ export const auth = betterAuth({
     changeEmail: {
       enabled: true,
     },
+    additionalFields: {
+      role: {
+        type: 'string[]',
+        values: ['user', 'admin'],
+        default: 'user',
+      },
+    },
   },
 });

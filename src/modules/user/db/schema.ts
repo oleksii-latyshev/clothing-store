@@ -1,15 +1,15 @@
 import { getTableColumns } from 'drizzle-orm';
 import { boolean, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 
-import { id, lifecycleDates } from '@/server/db/utils/schemas';
+import { id, lifecycleDates, maxVarchar } from '@/server/db/utils/schemas';
 
 export const users = pgTable('users', {
   id,
-  name: text('name').notNull(),
+  name: maxVarchar('name').notNull(),
   email: text('email').notNull().unique(),
   emailVerified: boolean('email_verified').notNull(),
   image: text('image'),
-  role: text('role'),
+  role: maxVarchar('role'),
   banned: boolean('banned'),
   banReason: text('ban_reason'),
   banExpires: timestamp('ban_expires'),
