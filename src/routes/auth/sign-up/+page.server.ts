@@ -4,19 +4,20 @@ import { zod } from 'sveltekit-superforms/adapters';
 
 import { auth } from '@/lib/auth.js';
 import { HTTP_STATUSES } from '@/lib/constants/index.js';
-import { signInFormSchema } from '@/modules/auth/schemas/index.js';
+import { ROLES } from '@/modules/auth/constants/index.js';
+import { signUpFormSchema } from '@/modules/auth/schemas/index.js';
 
 import type { Actions, PageServerLoad } from './$types.js';
 
 export const load: PageServerLoad = async () => {
   return {
-    form: await superValidate(zod(signInFormSchema)),
+    form: await superValidate(zod(signUpFormSchema)),
   };
 };
 
 export const actions: Actions = {
   default: async (event) => {
-    const form = await superValidate(event, zod(signInFormSchema));
+    const form = await superValidate(event, zod(signUpFormSchema));
 
     if (!form.valid) {
       return fail(HTTP_STATUSES.badRequest, {
@@ -24,10 +25,12 @@ export const actions: Actions = {
       });
     }
 
-    await auth.api.signInEmail({
+    await auth.api.signUpEmail({
       body: {
         email: form.data.email,
         password: form.data.password,
+        name: form.data.name,
+        role: [ROLES.user],
       },
     });
 

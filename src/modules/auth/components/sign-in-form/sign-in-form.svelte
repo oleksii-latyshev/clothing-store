@@ -34,14 +34,5 @@
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
-  <Form.Field {form} name="confirmPassword">
-    <Form.Control>
-      {#snippet children({ props })}
-        <Form.Label>Confirm Password</Form.Label>
-        <Input {...props} bind:value={$formData.email} />
-      {/snippet}
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
   <Form.Button>Submit</Form.Button>
 </form>

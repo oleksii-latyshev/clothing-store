@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+import { userSchema } from '@/modules/user/schema';
 import { MAX_VARCHAR_LENGTH } from '@/server/db/constants';
 
 export const authSchema = z.object({
@@ -18,13 +19,18 @@ export const authSchema = z.object({
 
 export type AuthSchema = z.infer<typeof authSchema>;
 
-export const signInFormSchema = authSchema
+export const signInFormSchema = authSchema;
+
+export type SignInFormSchema = z.infer<typeof signInFormSchema>;
+
+export const signUpFormSchema = authSchema
   .extend({
     confirmPassword: authSchema.shape.password,
+    name: userSchema.shape.name,
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: 'Passwords must match',
     path: ['confirmPassword'],
   });
 
-export type SignInFormSchema = z.infer<typeof signInFormSchema>;
+export type SignUpFormSchema = z.infer<typeof signUpFormSchema>;

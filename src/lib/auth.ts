@@ -15,12 +15,12 @@ export const auth = betterAuth({
       console.log('sendResetPassword', user);
     },
   },
-  socialProviders: {
-    github: {
-      clientId: import.meta.env.VITE_GITHUB_CLIENT_ID,
-      clientSecret: import.meta.env.VITE_GITHUB_CLIENT_SECRET,
-    },
-  },
+  // socialProviders: {
+  //   github: {
+  //     clientId: import.meta.env.VITE_GITHUB_CLIENT_ID,
+  //     clientSecret: import.meta.env.VITE_GITHUB_CLIENT_SECRET,
+  //   },
+  // },
   plugins: [admin()],
   user: {
     changeEmail: {
